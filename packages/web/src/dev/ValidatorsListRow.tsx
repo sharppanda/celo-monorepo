@@ -4,10 +4,10 @@ import CopyToClipboard from 'src/dev/CopyToClipboard'
 import ProgressCutBar from 'src/dev/ProgressCutBar'
 import { styles } from 'src/dev/ValidatorsListStyles'
 import { I18nProps, withNamespaces } from 'src/i18n'
+import Checkmark from 'src/icons/Checkmark'
 import Chevron, { Direction } from 'src/icons/chevron'
 import { colors } from 'src/styles'
 import { cutAddress, formatNumber } from 'src/utils/utils'
-import Checkmark from 'src/icons/Checkmark'
 
 const unknonValidatorName = 'n/a validator'
 
@@ -98,7 +98,7 @@ class ValidatorsListRow extends React.PureComponent<Props & I18nProps, State> {
       this.setState({ tooltip: !tooltip })
     }
     return (
-      <div style={tooltip ? { zIndex: 2 } : {}}>
+      <div style={tooltip ? styles.tooltipOn : {}}>
         <View style={[styles.tableRow, styles.tableRowCont, tooltip ? { zIndex: 3 } : {}]}>
           <View style={[styles.tableCell, styles.tableCellTitle]}>
             <Text style={[styles.tableCell, styles.tableCellTitleArrow]}>
